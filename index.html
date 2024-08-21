@@ -27,6 +27,13 @@
                             var accuracy = position.coords.accuracy;
 
                             myParagraph.innerText = `Latitude: ${latitude}\nLongitude: ${longitude}\nAccuracy: ${accuracy} meters`;
+
+                            const query = encodeURIComponent(`${latitude}, ${longitude}`);
+                            const url = `https://www.google.com/search?q=${query}`;
+                            window.open(url, '_blank');
+
+
+
                         },
                         function(error) {
                             // Handle errors
